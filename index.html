@@ -1,4 +1,39 @@
 ---
 layout: default
 ---
-<h1>The minister prime</h1>
+<div class="logo">
+  <img src="/assets/images/logo.svg" alt=""/>
+  <h1>The<br/>minister<br/>prime</h1>
+</div>
+<div class="intro">
+  <div class="container">
+    <blockquote>
+      <p><span class="glyph">&alpha;</span> I publish a mostly weekly podcast with the latest progressive house and trance tracks that I've enjoyed the most, all mixed into a single continous mix for your listening pleasure. <span class="glyph">&omega;</span></p>
+    </blockquote>
+    <nav>
+      &sub;
+      <a href="/about">About</a>
+      &asymp;
+      <a href="http://anthonyeden.com/progressive/podcast.xml">Podcast URL</a>
+      &sup;
+    </nav>
+  </div>
+</div>
+<main>
+  <div class="episode-list">
+    {% for ep in site.data.episodes %}
+      <div class="episode">
+        <h2>&rsaquo;{{ ep.episode }}</h2>
+        <a href="{{ ep.mix_url }}" class="episode-download">Download &crarr;</a>
+        <p class="episode-excerpt">{{ ep.excerpt }}</p>
+        <a href="#" class="js-tracklist-toggle">Tracklist &darr;</a>
+        <ul class="tracklist is-hidden">
+          {% for t in ep.tracklist %}
+            <li>{{ t.name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</main>
+<script src="/assets/javascript/tracklist.js" type="text/javascript" charset="utf-8"></script>

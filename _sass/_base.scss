@@ -1,3 +1,60 @@
+@import url(http://fonts.googleapis.com/css?family=Cousine:400,700);
+
+$font: "Cousine", sans-serif;
+$font-bold: 700;
+
+$base-unit: 1.5em;
+
+html {
+  height: 100%;
+}
+
 body {
-  background: $white;
+  font: 1em/1.8em $font;
+  line-height: 1.4;
+  background-color: $black;
+  background: $black url("/assets/images/bg.svg") repeat-y;
+  background-size: 70%;
+  background-position: top;
+  color: $white;
+}
+
+main, .container {
+  width: 95%;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+a {
+  color: $red;
+  text-decoration: none;
+  font-weight: $font-bold;
+  &:visited {
+    opacity: .7;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav {
+  padding: $base-unit 0;
+}
+
+.intro {
+  padding: $base-unit 0;
+}
+
+.logo {
+  padding: $base-unit;
+  position: fixed;
+  h1 {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}
+
+.is-hidden {
+  display: none;
 }
