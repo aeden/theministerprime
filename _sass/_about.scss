@@ -1,0 +1,32 @@
+.about {
+  padding: $base-unit * 8 0;
+  height: 100vh;
+  color: $black;
+  text-align: center;
+}
+
+.about-img {
+  display: block;
+  margin: $base-unit auto;
+  width: 230px;
+}
+
+.cover {
+  background: url("/assets/images/mask.svg");
+  height: 100vh;
+}
+
+.cover-bg {
+  background: url("/assets/images/mask-bg.svg");
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+
+.about-footer {
+  text-align: center;
+  padding: $base-unit * 8;
+}
+

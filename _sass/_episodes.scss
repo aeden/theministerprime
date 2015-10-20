@@ -1,3 +1,9 @@
+.episodes {
+  background: $black url("/assets/images/bg.svg") repeat-y;
+  background-size: 70%;
+  background-position: top;
+}
+
 .episode-list {
 }
 
@@ -6,6 +12,7 @@
   h2 {
     display: inline-block;
     padding-bottom: $base-unit / 4;
+    margin-right: $base-unit / 2;
     font-style: italic;
     color: $green;
   }
@@ -20,11 +27,10 @@
   color: $gray;
 }
 
-.episode-download {
+.btn {
   display: inline-block;
   padding: $base-unit / 4 $base-unit / 2;
   vertical-align: text-bottom;
-  margin-left: $base-unit;
   border: 2px solid $red;
   border-radius: 2px;
   font-size: 12px;
