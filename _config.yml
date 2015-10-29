@@ -11,3 +11,6 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+# Excludes
+exclude: ['README.markdown', 'Gemfile.lock', 'Gemfile']
