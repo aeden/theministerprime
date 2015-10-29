@@ -1,0 +1,42 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <link>{{ "/podcast.xml" | prepend: site.baseurl | prepend: site.url }}</link>
+    <description>{{ site.description | xml_escape }}</description>
+    <language>en</language>
+    <copyright>Minister Prime Music</copyright>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <category>Music</category>
+    <atom:link href="{{ "/podcast.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <itunes:author>The Minister Prime</itunes:author>
+    <itunes:summary>Progressive House and Trance mixes</itunes:summary>
+    <itunes:owner>
+      <itunes:name>The Minister Prime</itunes:name>
+      <itunes:email>me@theministerprime.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="{{ "/assets/images/cover.png" | prepend: site.baseurl | prepend: site.url }}"/>
+    <itunes:link rel="image" type="img/png" href="{{ "/assets/images/cover.png" | prepend: site.baseurl | prepend: site.url }}">The Minister Prime</itunes:link>
+    <itunes:category text="Music"/>
+    <itunes:keyword>the minister prime, progressive house, trance</itunes:keyword>
+    <itunes:explicit>no</itunes:explicit>
+{% for ep in site.data.episodes %}
+      <item>
+        <title>{{ ep.episode | prepend: "Prime Time Mix #" | xml_escape }}</title>
+        <link>{{ ep.mix_url | xml_escape }}</link>
+        <description>{{ ep.episode | prepend: "Episode #" | xml_escape }}</description>
+        <enclosure url="{{ ep.mix_url }}" length="{{ ep.size }}" type="audio/mpeg"/>
+        <guid isPermaLink="true">{{ ep.mix_url | xml_escape }}</guid>
+        <pubDate>{{ ep.date | date_to_rfc822 }}</pubDate>
+        <itunes:author>The Minister Prime</itunes:author>
+        <itunes:subtitle>{{ ep.episode | prepend: "Episode #" | xml_escape }}</itunes:subtitle>
+        <itunes:explicit>no</itunes:explicit>
+        <itunes:duration>{{ ep.duration }}</itunes:duration>
+      </item>
+{% endfor %}
+  </channel>
+</rss>
