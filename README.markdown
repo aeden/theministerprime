@@ -2,4 +2,4 @@ Web site for The Minister Prime.
 
 ## Deploying
 
-`git push origin master:gh-pages`
+`git push origin master`
